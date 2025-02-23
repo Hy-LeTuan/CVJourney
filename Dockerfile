@@ -1,24 +1,38 @@
 FROM ubuntu:24.04
 
-# EXTERNAL SOURCES
+LABEL author=tuanhy_le
 
+SHELL ["/bin/bash", "-c"] 
+
+# ENVIRONMENT VARIABLES
+ENV PATH="/root/.local/bin/:$PATH"
+
+# EXTERNAL SOURCES
 # add uv sources
 ADD https://astral.sh/uv/0.5.13/install.sh /uv-installer.sh
 
 # EXECUTE
-
 # install system dependencies
 RUN apt-get update -y && \ 
     apt update -y && \
     apt-get install -y --no-install-recommends curl ca-certificates && \
-    apt install unzip wget -y &&
+    apt install -y unzip wget
 
 # install uv dependencies
-RUN sh /uv-installer.sh && rm /uv-installer.sh &&
+RUN sh /uv-installer.sh && rm /uv-installer.sh
 
 # create python environment
-RUN uv venv ~/cv --python 3.10
-RUN source ~/.cv/bin/activate
+RUN uv python install 3.10
+RUN uv venv --python 3.10
+RUN source /.venv/bin/activate
 
-# ENVIRONMENT VARIABLES
-ENV PATH="/root/.local/bin/:$PATH"
+# install python dependencies
+RUN uv pip install numpy
+RUN uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+RUN uv pip install matplotlib
+
+# create workspace
+RUN mkdir /home/ubuntu/workspace
+WORKDIR /home/ubuntu/workspace
+
+CMD ["/bin/bash"]
