@@ -1,8 +1,8 @@
-# Virtual Machines 
+# Virtual Machines
 
 Before learning what Docker is and why we need Docker, we have to learn about its predecessor, the Virtual Machine which works through a process called virtualization.
 
-Virtualization is a technology where you can simulate multiple different devices running different operating system right on your current device. A device that you are simulating is called a guest and your current device is called the host. When you create a Virtual Machine, you allocate a part of your resources (CPU power, RAM) to the guest machine and the host and guest communicates and shares information through a hypervisor (a piece of software that manages virtual machines). 
+Virtualization is a technology where you can simulate multiple different devices running different operating system right on your current device. A device that you are simulating is called a guest and your current device is called the host. When you create a Virtual Machine, you allocate a part of your resources (CPU power, RAM) to the guest machine and the host and guest communicates and shares information through a hypervisor (a piece of software that manages virtual machines).
 
 **The advantage** of virtual machine is that it allows users to run multiple operating systems on the same machine, where these operating systems can use different kernels (the code for the operations of the operating system). This means you can run Windows and Linux on a MacBook without any problem.
 
@@ -10,7 +10,7 @@ Virtualization is a technology where you can simulate multiple different devices
 
 # Docker vs. Virtual Machine
 
-Docker is similar to Virtual Machines in the sense that it also allows you to simulate multiple operating systems on your host device. The only difference between Docker and VMs that you need to care about is that Docker does not use a hypervisor. Instead, guest machines directly interact with the host resources and will take as much resource as needed. This means that Docker is **faster** than VMs, but it also means that the **kernel between the guest and the host have to be the same**. This means that you cannot simulate a Linux machine on your Windows device using Docker *without taking more actions*, but you can run any Linux operating system if you are currently using a Linux device.
+Docker is similar to Virtual Machines in the sense that it also allows you to simulate multiple operating systems on your host device. The only difference between Docker and VMs that you need to care about is that Docker does not use a hypervisor. Instead, guest machines directly interact with the host resources and will take as much resource as needed. This means that Docker is **faster** than VMs, but it also means that the **kernel between the guest and the host have to be the same**. This means that you cannot simulate a Linux machine on your Windows device using Docker _without taking more actions_, but you can run any Linux operating system if you are currently using a Linux device.
 
 # Docker fundamentals
 
@@ -28,4 +28,4 @@ As stated earlier, Docker containers requires the host OS to use the same kernel
 
 **On Windows**, Microsoft allows us to install **Windows Subsystem for Linux**, which is essentially a way for us to install the Linux kernel right on Windows. With WSL installed, we can easily use this kernel to run any Linux Docker container we want.
 
-**On MacBook**, Apple does not allow us to install a Linux kernel like on Windows, but Docker offers a solution where the **Docker Desktop App** for MacBook contains a very lightweight Virtual Machine that is equipped with a Linux kernel, allowing you to run Docker container through this machine.
+**On MacBook**, Apple does not allow us to install a Linux kernel like on Windows, but Docker offers a solution where the **Docker Desktop App** for MacBook contains a very lightweight Virtual Machine that is equipped with a Linux kernel, allowing you to run Docker container using the Linux kernel of this virtual machine. The upside of this method is that Docker's VM is very ligthweight and is not a fully fledged Virutal Machine, so it keeps your MacBook light and fast.
