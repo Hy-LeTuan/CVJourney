@@ -16,7 +16,8 @@ ADD https://astral.sh/uv/0.5.13/install.sh /uv-installer.sh
 RUN apt-get update -y && \ 
     apt update -y && \
     apt-get install -y --no-install-recommends curl ca-certificates && \
-    apt install -y unzip wget
+    apt install -y unzip wget \
+    apt install -y git
 
 # install uv dependencies
 RUN sh /uv-installer.sh && rm /uv-installer.sh
@@ -35,4 +36,4 @@ RUN uv pip install matplotlib
 RUN mkdir /home/ubuntu/workspace
 WORKDIR /home/ubuntu/workspace
 
-CMD ["/bin/bash"]
+CMD ["/bin/bash", "source /.venv/bin/activate"]
