@@ -60,7 +60,7 @@ To solve this problem, you first need to ask for the user's name and age with th
 
 If the problem is too easy for you *(I didn't know you were **that** good)*, you can make it harder by asking the user for their specific birthday using with date, month and year. Then, calculate how many days it will take for them to reach their $100^{th}$ birthday. 
 
-This problem is similar to the original one, the only difference is that you might want to manually create a `datime.datetime` object where the date is the date of the $100^{th}$ birthday. Then, try doing some arithmetics with this `datetime` and the current `datetime` to get a `timedelta` object. Then you can get the answer with an attribute from the `timedelta` object. (assuming the hour of the day does not matter).
+This problem is similar to the original one, the only difference is that you might want to manually create a `datime.datetime` object where the date is the date of the $100^{th}$ birthday. Then, try doing some arithmetic calculations with this `datetime` and the current `datetime` to get a `timedelta` object. Then you can get the answer with an attribute from the `timedelta` object. (assuming the hour of the day does not matter).
 
 **For those who dare:** Try taking the time you were born into consideration in your calculation and calculate exactly how many hours you have left until you reach 100!
 
