@@ -1,6 +1,6 @@
 # Exercise 1
 
-**Submission**: To submit the answer to this problem, create a new Git branch with your name. 
+**Submission**: To submit the answer to this problem, create a new Git branch with your name.
 
 Then, create a file called `{name}_solution.py` in the `solution/` directory right in this directory. All the code you write should be in the `solution/name_solution.py`.
 
@@ -15,12 +15,15 @@ Create a program that asks the user to **enter their name and their age**. Print
 ### Reading and input conversion
 
 To read a user input in Python, use the `input(message: str)` function which will return the user's input as a `string`:
+
 ```python
-# the string Enter your input: will be displayed followed by a space for the user to type
 user_input = input("Enter your input: ")
 ```
 
+the string `Enter your input`: will be displayed followed by a space and then emtpy space for the user to type their input in.
+
 To convert variables of a type to another, you can directly typecast it with the `type()` command. For example, I have a variable `x = "4"` which is a string, which I can convert to an integer using the `int()` command:
+
 ```python
 y = int(x)
 print(y, type(y)) # 4, <class 'int'>
@@ -29,20 +32,24 @@ print(y, type(y)) # 4, <class 'int'>
 ### Formatted string
 
 Whenever you want to pass a variable into a string, you can use the `formatted string` syntax, where the string is prepended with the `'f'` character and pass variables in with the curly braces like this: `f"string inside {variable}"`
+
 ```python
-x = 3 + 45 
+x = 3 + 45
 print(f"the number x is: {x}") # the number x is 48
 ```
 
 ## The datetime object
 
 The `datetime` module is a way for you to manipulate date in a clean format in Python. In the `datetime` module, there is a `datetime` class called `datetime` with which you can get the current date using the `today()` method:
+
 ```python
 import datetime
 today = datetime.datetime.today()
 print(today) # 2025-03-30 20:03:57.448345
 ```
+
 The `datetime` class displays the whole date in this formatted string, but you can access each individual component of the date using the various attributes of the `datetime` class. For example, to get the year, you can use the `year` attribute:
+
 ```python
 import datetime
 today = datetime.datetime.today()
@@ -58,7 +65,7 @@ To solve this problem, you first need to ask for the user's name and age with th
 
 # Extra
 
-If the problem is too easy for you *(I didn't know you were **that** good)*, you can make it harder by asking the user for their specific birthday using with date, month and year. Then, calculate how many days it will take for them to reach their $100^{th}$ birthday. 
+If the problem is too easy for you _(I didn't know you were **that** good)_, you can make it harder by asking the user for their specific birthday using with date, month and year. Then, calculate how many days it will take for them to reach their $100^{th}$ birthday.
 
 This problem is similar to the original one, the only difference is that you might want to manually create a `datime.datetime` object where the date is the date of the $100^{th}$ birthday. Then, try doing some arithmetic calculations with this `datetime` and the current `datetime` to get a `timedelta` object. Then you can get the answer with an attribute from the `timedelta` object. (assuming the hour of the day does not matter).
 
