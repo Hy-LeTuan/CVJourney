@@ -88,7 +88,28 @@ In this case, since the `if` and `elif` statement are all false, the `else` cond
 
 ### List
 
-A **list** in Python is a type of data structure that stores items continuously next to each other.
+A **list** in Python is a type of data structure that stores items continuously next to each other. This type of data structure is also known as a *vector* in other programming languages such as Java and C++. A list in Python is represented by the square brackets `[]`, and to initialize a list, you can use the brackets syntax:
+
+```python
+animal_list = ["dog", "cat", "bird"]
+```
+
+The `animal_list` variable is now a list containing 3 items: `"dog", "cat", "bird"`. To access an item in a list, we **index** into the array and retrieve the item at that index. Python uses a 0-based indexing system where the first item is at index 0 and not index 1, so to get the first item, we do
+
+```python
+animal_0 = animal_list[0]
+print(f"animal at index 0: {animal_0}") # prints out: "animal at index 0: dog"
+```
+
+The items at other indices can also be retrieved the same way, and the last item in the list is always at index `length of list - 1`.
+
+To add items to a list, use the `append` method on the list you want to add to:
+
+```python
+animal_list = []
+animal_list.append("cat") # ["cat"]
+animal_list.append("dog") # ["cat", "dog"]
+```
 
 # Extra
 
@@ -108,7 +129,7 @@ except Error:
     ...
 ```
 
-statement and run the program until the user enters an age that is resonable.
+statement and run the program until the user enters an age that is reasonable.
 
 **Final note:** You can find out more about the `try...except` statement in Python [here](https://www.w3schools.com/python/python_try_except.asp).
 
